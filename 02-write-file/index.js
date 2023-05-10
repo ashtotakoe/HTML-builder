@@ -7,7 +7,7 @@ const filePath = path.join(__dirname, 'text.txt');
 let textFile = '';
 
 stdin.on('data', (data) => {
-  if (data.toString() === 'exit\n') exitScript();
+  if (data.toString() === 'exit\n' || data.toString() === 'exit') exitScript();
 
   textFile += data;
   fs.writeFile(filePath, textFile, (err) => {
